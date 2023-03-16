@@ -26,6 +26,24 @@
  * ```
  */
 
-import './index.css';
+// import "./index.css";
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+// console.log(
+//   '👋 This message is being logged by "renderer.js", included via webpack'
+// );
+
+import Vue from "../node_modules/vue/dist/vue.esm-browser";
+import App from "./App.vue";
+
+import axios from "./plugins/axios";
+
+// import "./assets/css/tailwind.css";
+
+console.log("🚀 ~ file: renderer.ts:36 ~ Vue:", Vue);
+Vue.config.productionTip = false;
+
+Vue.use(axios);
+
+new Vue({
+  render: (h) => h(App),
+}).$mount("#app");

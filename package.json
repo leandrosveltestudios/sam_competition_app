@@ -1,11 +1,14 @@
 {
-  "name": "sam_competitionn_app",
-  "productName": "sam_competitionn_app",
+  "name": "sam_competition_app",
+  "productName": "sam_competition_app",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
+  "config": {
+    "forge": "./forge.config.js"
+  },
   "scripts": {
-    "start": "electron-forge start",
+    "start": "VUE_APP_BASE_API_URL=http://localhost:3000 electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -36,9 +39,15 @@
     "style-loader": "^3.0.0",
     "ts-loader": "^9.2.2",
     "ts-node": "^10.0.0",
-    "typescript": "~4.5.4"
+    "typescript": "~4.5.4",
+    "vue-loader": "^17.0.1",
+    "vue-template-compiler": "^2.7.14",
+    "path-override-webpack-plugin": "^0.1.2"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "vue": "^3.2.47"
   }
 }
